@@ -1,0 +1,11 @@
+body {
+    background-color: antiquewhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.8;
+    margin: 20px;
+}
+
+.header__logo {
+    width: 300px;
+   
+}
