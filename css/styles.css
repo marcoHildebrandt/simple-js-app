@@ -1,11 +1,23 @@
 body {
     background-color: antiquewhite;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    line-height: 1.8;
-    margin: 20px;
+    margin: 30px;
+    border: 2px solid black;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+}
+
+.header {
+    margin-bottom: 40px;
 }
 
 .header__logo {
     width: 300px;
-   
+
+margin: -20px;   
+} 
+
+h1 {
+    font-size: 22px;
 }
