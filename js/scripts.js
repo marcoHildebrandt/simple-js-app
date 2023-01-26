@@ -25,11 +25,23 @@ let pokemonList = [
         types: "Dark"
     },
 ];
-for (let i = 0; i < pokemonList.length; i++) {
-    document.write("<p>" + "<h1>" + pokemonList[i].name + " (height: " + pokemonList[i].height + ") " + "</h1>" + "</p>");
-    if (pokemonList[i].height >= 2.0 && pokemonList[i].height <= 2.4) {
-        document.write(" - Wow, that's big! ")
-    } else if (pokemonList[i].height >= 2.5)
+
+//for loop
+// for (let i = 0; i < pokemonList.length; i++) {
+//     document.write("<p>" + "<h1>" + pokemonList[i].name + " (height: " + pokemonList[i].height + ") " + "</h1>" + "</p>");
+//     if (pokemonList[i].height >= 2.0 && pokemonList[i].height <= 2.4) {
+//         document.write(" - Wow, that's big! ")
+//     } else if (pokemonList[i].height >= 2.5)
+//         document.write(" - Wow, that's really big! ")
+
+// }
+
+//forEach loop
+pokemonList.forEach(function (pokemon) {
+    document.write("<p>" + "<h1>" + pokemon.name + " (height: " + pokemon.height + ") " + "</h1>" + "</p>");
+    if (pokemon.height >= 2.0 && pokemon.height <= 2.4) {
+        document.write(" - Wow, that's big! ");
+    } else if (pokemon.height >= 2.5) {
         document.write(" - Wow, that's really big! ")
-   
-} 
+    }
+});
