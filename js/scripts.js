@@ -26,6 +26,7 @@ let pokemonRepository = (function () {
             types: "Dark"
         },
     ];
+
     function add(pokemon) {
         pokemonList.push(pokemon);
     }
@@ -42,14 +43,37 @@ let pokemonRepository = (function () {
         button.classList.add("button-class");
         listItem.appendChild(button);
         pokemonList.appendChild(listItem);
+        // Create an event listener to every button
+        button.addEventListener("click", function (Event) {
+            showDetails(pokemon);
+        });
     }
 
     return {
         add: add,
         getAll: getAll,
         addListItem: addListItem
-    };
+    }
+
+
+    function showDetails(pokemon) {
+        console.log(pokemon);
+    }
 })();
+
+//forEach loop
+pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addListItem(pokemon);
+});
+    //document.write replaced
+    // document.write("<p>" + "<h1>" + pokemon.name + " (height: " + pokemon.height + ") " + "</h1>" + "</p>");
+    // if (pokemon.height >= 2.0 && pokemon.height <= 2.4) {
+    //     document.write(" - Wow, that's big! ");
+    // } else if (pokemon.height >= 2.5) {
+    //     document.write(" - Wow, that's really big! ")
+    // }
+
+    // for loop: was made obsolete by forEach loop
 //for loop
 // for (let i = 0; i < pokemonList.length; i++) {
 //     document.write("<p>" + "<h1>" + pokemonList[i].name + " (height: " + pokemonList[i].height + ") " + "</h1>" + "</p>");
@@ -59,15 +83,4 @@ let pokemonRepository = (function () {
 //         document.write(" - Wow, that's really big! ")
 
 // }
-
-//forEach loop
-pokemonRepository.getAll().forEach(function (pokemon) {
-    pokemonRepository.addListItem(pokemon);
-    // document.write("<p>" + "<h1>" + pokemon.name + " (height: " + pokemon.height + ") " + "</h1>" + "</p>");
-    // if (pokemon.height >= 2.0 && pokemon.height <= 2.4) {
-    //     document.write(" - Wow, that's big! ");
-    // } else if (pokemon.height >= 2.5) {
-    //     document.write(" - Wow, that's really big! ")
-    // }
-});
 
