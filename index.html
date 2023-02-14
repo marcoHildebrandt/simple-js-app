@@ -2,22 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <title>POKEDEX</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <title>POKEDEX</title>
 </head>
 
 <body>
-    <header>
-        <div class="header">
-            <img class="header__logo" src="Images/Logo.png" alt="Pokedex-Logo">
-            <ul class= "pokemon-list"></ul>
-        </div>
-    </header>
-    <script src="js/promise-polyfill.js"></script>
-    <script src="js/fetch-polyfill.js"></script>
-    <script src="js/scripts.js"></script>
+  <header>
+    <div class="header">
+      <img class="header__logo" src="Images/Logo.png" alt="Pokedex-Logo">
+    </div>
+  </header>
+  <main>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span id="close-button" class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <img id="modal-image" src="" alt="pokemon image">
+        <p id="modal-height"></p>
+        <p id="modal-types"></p>
+      </div>
+    </div>
+
+    <!--Pokemon List-->
+    <ul class="pokemon-list">
+    </ul>
+  </main>
+  <script src="js/promise-polyfill.js"></script>
+  <script src="js/fetch-polyfill.js"></script>
+  <script src="js/scripts.js"></script>
 </body>
 
 </html>

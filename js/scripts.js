@@ -2,7 +2,7 @@ let pokemonRepository = (function () {
     let pokemonList = []
     //added pokemon API link
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
- 
+
     function add(pokemon) {
         pokemonList.push(pokemon);
     }
@@ -66,8 +66,42 @@ let pokemonRepository = (function () {
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
             console.log(pokemon);
+            // Get the modal
+            let modal = document.getElementById("myModal");
+
+
+            // Get the title, image, height, and types elements
+            let title = document.getElementById("modal-title");
+            let image = document.getElementById("modal-image");
+            let height = document.getElementById("modal-height");
+            let types = document.getElementById("modal-types");
+            let closeButton = document.getElementById("close-button");
+
+            // Update the title, image, height, and types with the pokemon details
+            title.innerText = pokemon.name;
+            image.src = pokemon.imageUrl;
+            height.innerText = "Height: " + pokemon.height + "m";
+            types.innerText = "Types: " + pokemon.types.map(type => type.type.name).join(", ");
+
+            // Show the modal
+            modal.style.display = "block";
+
+            // Add event listener to close button
+            closeButton.addEventListener("click", function () {
+                // Hide the modal
+                modal.style.display = "none";
+            });
+
+            // Add event listener to close modal when clicking outside of it
+            window.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+
         });
-    }
+    };
+
 })();
 
 //forEach loop
