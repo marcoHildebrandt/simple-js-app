@@ -54,30 +54,30 @@ let pokemonRepository = (function () {
         });
     }
 
-// Find the search form and add an event listener to it
-let searchForm = document.querySelector('form');
-searchForm.addEventListener('submit', function(event) {
-  // Prevent the form from submitting and refreshing the page
-  event.preventDefault();
+    // Find the search form and add an event listener to it
+    let searchForm = document.querySelector('form');
+    searchForm.addEventListener('submit', function (event) {
+        // Prevent the form from submitting and refreshing the page
+        event.preventDefault();
 
-  // Get the search term from the input field
-  let searchTerm = searchForm.querySelector('input').value.toLowerCase();
+        // Get the search term from the input field
+        let searchTerm = searchForm.querySelector('input').value.toLowerCase();
 
-  // Filter the pokemon list based on the search term
-  let filteredList = pokemonRepository.getAll().filter(function(pokemon) {
-    return pokemon.name.toLowerCase().includes(searchTerm);
-  });
+        // Filter the pokemon list based on the search term
+        let filteredList = pokemonRepository.getAll().filter(function (pokemon) {
+            return pokemon.name.toLowerCase().includes(searchTerm);
+        });
 
-  // Clear the existing list of pokemon
-  let pokemonList = document.querySelector('.pokemon-list');
-  pokemonList.innerHTML = '';
+        // Clear the existing list of pokemon
+        let pokemonList = document.querySelector('.pokemon-list');
+        pokemonList.innerHTML = '';
 
-  // Display the filtered list of pokemon
-  filteredList.forEach(function(pokemon) {
-    pokemonRepository.addListItem(pokemon);
-  });
-});
-   
+        // Display the filtered list of pokemon
+        filteredList.forEach(function (pokemon) {
+            pokemonRepository.addListItem(pokemon);
+        });
+    });
+
     return {
         add: add,
         getAll: getAll,
